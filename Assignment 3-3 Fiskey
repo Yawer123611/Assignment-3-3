@@ -1,0 +1,41 @@
+
+
+
+year = int(input("Enter Year: "))
+month = int(input("Enter Month: "))
+day = int(input("Enter Day: "))
+
+
+is_valid_date = True
+
+
+if year <= 0:
+    is_valid_date = False
+
+
+if month < 1 or month > 12:
+    is_valid_date = False
+
+
+if day < 1 or day > 31:
+    is_valid_date = False
+
+
+if month in [4, 6, 9, 11] and day == 31:
+    is_valid_date = False  
+if month == 2:  
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        if day > 29:  
+            is_valid_date = False
+    else:
+        if day > 28:  
+            is_valid_date = False
+
+
+if is_valid_date:
+    print(f"{month}/{day}/{year} is a valid date.")
+else:
+    print(f"{month}/{day}/{year} is an invalid date.")
+
+
+
